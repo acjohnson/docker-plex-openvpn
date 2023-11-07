@@ -1,6 +1,6 @@
 # Plex and OpenVPN
 
-FROM ghcr.io/onedr0p/plex:1.32.6.7557-1cf77d501
+FROM ghcr.io/onedr0p/plex:1.32.7.7621-871adbd44
 MAINTAINER Aaron Johnson
 
 VOLUME /data
