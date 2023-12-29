@@ -1,6 +1,7 @@
 # Plex and OpenVPN
 
 FROM ghcr.io/onedr0p/plex:1.32.8.7639-fb6452ebf
+ARG PLEX_VERSION=1.32.8.7639
 MAINTAINER Aaron Johnson
 
 VOLUME /data
