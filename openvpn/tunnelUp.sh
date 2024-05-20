@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 # Source our persisted env variables from container startup
 source /etc/openvpn/utils.sh
 

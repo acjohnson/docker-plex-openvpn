@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 source /etc/openvpn/utils.sh
 
@@ -41,9 +41,9 @@ fi
 echo "Network is up"
 
 #Service check
-#Expected output is 2 for both checks, 1 for process and 1 for grep
-OPENVPN=$(pgrep openvpn | wc -l )
-PLEX=$(pgrep -f 'Plex Media Server' | wc -l)
+#Expected output is 1 for both checks
+OPENVPN=$(pgrep openvpn | wc -l)
+PLEX=$(pgrep -f '/usr/lib/plexmediaserver/Plex Media Server' | wc -l)
 
 if [[ ${OPENVPN} -ne 1 ]]; then
 	echo "Openvpn process not running"

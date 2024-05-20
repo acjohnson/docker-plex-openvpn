@@ -6,7 +6,7 @@ source /etc/openvpn/utils.sh
 RUN_AS=root
 
 if [ -n "$PUID" ] && [ ! "$(id -u root)" -eq "$PUID" ]; then
-    RUN_AS=kah
+    RUN_AS=root
     if [[ "true" = "$LOG_TO_STDOUT" ]]; then
       chown ${RUN_AS}:${RUN_AS} /dev/stdout
     fi

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 ##
 # Get some initial setup out of the way.

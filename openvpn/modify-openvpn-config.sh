@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 source /etc/openvpn/utils.sh
 

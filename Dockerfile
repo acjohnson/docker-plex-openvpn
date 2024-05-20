@@ -13,7 +13,7 @@ USER root
 RUN apt-get update \
     && apt-get -y install software-properties-common ufw \
     && apt-get update \
-    && apt-get install -y dumb-init openvpn curl wget sudo netcat \
+    && apt-get install -y dumb-init openvpn curl wget sudo netcat-openbsd iputils-ping bash net-tools iproute2 bind9-dnsutils \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ADD openvpn/ /etc/openvpn/
