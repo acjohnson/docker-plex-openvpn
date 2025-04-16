@@ -1,7 +1,7 @@
 # Plex and OpenVPN
 
-FROM ghcr.io/onedr0p/plex:1.41.0.8994-f2c27da23
-ARG PLEX_VERSION=1.41.0.8994
+FROM registry.thejohnsons.site/docker-plex-openvpn:working
+ARG PLEX_VERSION=1.41.6.9685
 MAINTAINER Aaron Johnson
 
 VOLUME /data
@@ -15,6 +15,11 @@ RUN apt-get update \
     && apt-get update \
     && apt-get install -y dumb-init openvpn curl wget sudo netcat-openbsd iputils-ping bash net-tools iproute2 bind9-dnsutils \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN wget https://github.com/acjohnson/gptshare/raw/refs/heads/master/plexmediaserver_${PLEX_VERSION}-d301f511a_amd64.deb \
+    -O /tmp/plexmediaserver_amd64.deb
+
+RUN apt-get -y install /tmp/plexmediaserver_amd64.deb
 
 ADD openvpn/ /etc/openvpn/
 ADD scripts /etc/scripts/

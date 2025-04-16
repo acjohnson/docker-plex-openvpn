@@ -1,4 +1,4 @@
-FULLTAG=registry.thejohnsons.site/docker-plex-openvpn:1.41.0.8994
+FULLTAG=registry.thejohnsons.site/docker-plex-openvpn:1.41.6.9685
 DOCKERFILE=Dockerfile
 all: build
 
